@@ -179,7 +179,7 @@ string QInt::CongStr(string a, string b)
 		{
 			if (nho == 1)
 			{
-				if (a.length() >= b.length())
+				if (a.length() > b.length())
 				{
 					c.insert(0, 1, char(a[a.length() - i - 1] + 1));
 					for (int j = abs(int(a.length() - b.length())) - 2; j >= 0; j--)
@@ -187,6 +187,8 @@ string QInt::CongStr(string a, string b)
 						c.insert(0, 1, a[j]);
 					}
 				}
+				else if (a.length() == b.length())
+					c.insert(0, 1, '1');
 				else
 				{
 					c.insert(0, 1, char(b[b.length() - i - 1] + 1));
@@ -198,7 +200,7 @@ string QInt::CongStr(string a, string b)
 			}
 			else
 			{
-				if (a.length() >= b.length())
+				if (a.length() > b.length())
 				{
 					for (int j = abs(int(a.length() - b.length())) - 1; j >= 0; j--)
 					{
@@ -246,7 +248,7 @@ string QInt::CongStr(string a, string b)
 	return c;
 }
 
-string QInt::BinToDec(int* a, int n)
+string QInt::BinToDec(int a[], int n)
 {
 	string b = "0";
 	for (int i = 0; i < n; i++)
@@ -255,7 +257,7 @@ string QInt::BinToDec(int* a, int n)
 		{
 			b = CongStr(MuHai(n - 1 - i), b);
 		}
-	}
+	}			
 	return b;
 }
 
@@ -290,4 +292,52 @@ void QInt::PrintQInt()
 	}*/
 	c = BinToDec(b, 128);
 	cout << c << endl;
+}
+
+string QInt::BinToHex(int * a, int n)
+{
+	int b[4], d = 0, e = 0;
+	string c, f;
+	int i = 0;
+	while (1)
+	{
+		if (i > n - 1)
+			break;
+		for (int i = 0; i < 4; i++)
+			b[i] = 0;
+		while (d < 4 && i != n)
+		{
+			b[3-d] = a[n - 1 - i];
+			d++;
+			i++;
+		}
+		d = 0;
+		if (i == n - 1)
+			f = BinToDec(b, n % 4);
+		else
+			f = BinToDec(b, 4);
+		if (f.length() == 1)
+			c.insert(0, f);
+		else
+		{
+			for (int i = 0; i < f.length(); i++)
+			{
+				e = e * 10 + ((int)f[i] - 48);
+			}
+			c.insert(0, 1, (char)(e + 48 + 7));
+		}
+	}
+	return c;
+}
+
+string QInt::DecToHex(string a)
+{
+	int*b;
+	DecToBin(a, b, 128);
+	return BinToHex(b, 128);
+}
+
+QInt QInt::operator+(const QInt & a)
+{
+	
 }

@@ -16,6 +16,10 @@ public:
 	string NhanHai(string a);
 	string MuHai(int a);
 	string CongStr(string a, string b);
-	string BinToDec(int *a, int n);	//chuyen tu mang intvs n ptu sang string
+	string BinToDec(int a[], int n);	//chuyen tu mang intvs n ptu sang string
 	void PrintQInt();
+	string BinToHex(int *a, int n);
+	string DecToHex(string a);
+
+	QInt operator+(const QInt& a);
 };

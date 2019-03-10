@@ -1,0 +1,7 @@
+﻿  Funtion.cpp
+c:\users\admin\documents\github\ktmt-hn-doan-1\doan-ktmt\1712843\funtion.cpp(15): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\documents\github\ktmt-hn-doan-1\doan-ktmt\1712843\funtion.cpp(323): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+c:\users\admin\documents\github\ktmt-hn-doan-1\doan-ktmt\1712843\main.cpp(4): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...
+  1712843.vcxproj -> C:\Users\Admin\Documents\GitHub\ktmt-hn-DoAn-1\DoAn-KTMT\Debug\1712843.exe
