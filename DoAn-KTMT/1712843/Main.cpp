@@ -2,15 +2,25 @@
 
 void main()
 {
-	QInt I;
-	string a = "1472";
-	int b[] = { 1,0,0,1,1,0,1,1,0,0,0,1 };
-	//I.ScanQInt();
-	//cout << endl;
-	//I.PrintQInt();
-	//cout << I.BinToHex(b, 12) << endl;
-	//cout << I.BinToDec(b, 7) << endl;
+	QInt I, E, V;
+	string a = "15";
+	string m = "15";
+	int b[128] = { 0 };
+	int c[128] = { 0 };
+	b[126] = 1; b[124] = 1; b[123] = 1, b[0] = 1;
+	c[127] = 1;
+	int* f;
+	string z, x, v;
+	I.ScanQInt(a, 10);
+	E.ScanQInt(m, 10);
+	if (E == I)cout << "dung" << endl;
 
-	cout << I.DecToHex(a) << endl;
+	//I.ScanQInt(a,10);
+	//I.PrintQInt();
+
+	//I.ChiaBinary(a);
+	
+
+	
 	system("pause");
 }
